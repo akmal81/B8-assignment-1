@@ -41,7 +41,7 @@ const formatCoordinate = (dhakaLatLog: readonly [number, number, string]) => {
 };
 
 // Sample Input:
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"])); 
+// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
 // console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
 
 //* 4
@@ -62,7 +62,10 @@ interface Course {
   isPublished: boolean;
 }
 
-const getPopularCourses = (courses: Course[], minStudents: number):Course[] => {
+const getPopularCourses = (
+  courses: Course[],
+  minStudents: number,
+): Course[] => {
   const coursesArray: Course[] = [];
 
   for (const course of courses) {
@@ -86,7 +89,6 @@ const getPopularCourses = (courses: Course[], minStudents: number):Course[] => {
 //* 6
 
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
-
   return items.map((itm) => itm[key]);
 };
 // Sample Input:
@@ -133,4 +135,17 @@ class Manager extends Employee {
 
 // * 8
 
-const validateAgeAsync = () => {};
+const validateAgeAsync = async (age: number): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    if (age < 18) {
+      reject(new Error("Access Denied: Must be 18 or older"));
+    } else {
+      setTimeout(() => {
+        resolve("Access Granted");
+      }, 1000);
+    }
+  });
+};
+
+// console.log(await validateAgeAsync(20));
+// console.log(await validateAgeAsync(15));

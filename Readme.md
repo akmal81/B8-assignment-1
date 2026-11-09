@@ -1,7 +1,18 @@
 # Assignment-1 TypeScript Functions and Classes Overview
 ```
-This Assignment demonstrates various TypeScript features, including utility functions, generics, object-oriented programming (OOP) principles, and asynchronous operations. Below is a detailed summary of each code block and function included:
+This Assignment demonstrates various TypeScript features, including utility functions,
+ generics, object-oriented programming (OOP) principles, and asynchronous operations.
+ Below is a detailed summary of each code block and function included:
 ```
+---
+
+# Blog Links
+```
+- [Type Narrowing Explanation](./type-narrowing.md)
+- [Type vs Interface Comparison](./type-vs-interface.md)
+
+```
+
 ---
 ### 📌1. Functions & Default Parameters
 ```

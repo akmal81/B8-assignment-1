@@ -1,9 +1,9 @@
 # 🚀 Core differences between type aliases and interface
 
-Typescript Type Alias and Interface are both use to define object structure. But they have some core differences between them. Bellow the core difference are discussed
+Typescript Type Alias and Interface are both use to define object structure. But they have some core differences between them. Bellow the core differences are discussed
 
-### 📌1. declaration Merging: 
-If we declare multipule type with same name it will not merge throw error but multiple Interface with same name will merge autometically
+### 📌1. Declaration Merging: 
+If we declare multiple type with same name it will not merge throw error but multiple Interface with same name will merge automatically
 
 ```ts
 type SalaryType=number
@@ -24,7 +24,7 @@ const salary:ISalary={
 ```
 ---
 ### 📌2. Primitives & Unions
-Type alias use for primitive type like string, number, union, tuple in the othr hand interface use to define object structure but it can be extended
+Type alias use for primitive type like string, number, union, tuple in the other hand interface use to define object structure but it can be extended
 
 ```ts
 // type
@@ -45,7 +45,7 @@ interface IEmployee {
 ---
 
 ### 📌3. Extending / Inheritance
-Type alis can be extended useing intersection (&) operator. Interface can be extended useing extends keyword
+Type alias can be extended useing intersection (&) operator. Interface can be extended using extends keyword
 
 ```ts
 // Use of &
@@ -73,4 +73,4 @@ interface Manager extends IEmployee{
 ```
 ---
 To summarize interface is preferred for defining object and object-oriented designs
-in the other hand type alias is more flexible for premitive union or complex type combinations. we should use both according to project's requirements.
+in the other hand type alias is more flexible for primitive union or complex type combinations. we should use both according to project's requirements.

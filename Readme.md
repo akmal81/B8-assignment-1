@@ -5,10 +5,10 @@ This Assignment demonstrates various TypeScript features, including utility func
 ```
 ---
 
-# Blog Links
-```
-- [type-narrowing.md](./type-narrowing.md) 
-- [type-vs-interface.md](./type-vs-interface.md) 
+- # Blog Links
 
-```
+- [Type Narrowing Blog](./type-narrowing.md)
+- [Type vs Interface Blog](./type-vs-interface.md)
+
+
 

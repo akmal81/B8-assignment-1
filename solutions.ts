@@ -1,60 +1,39 @@
-// * 1
+
 const multiplyValue = (value: number, multiplier: number = 2): number => {
   return value * multiplier;
 };
 
-// Sample Input:
-// multiplyValue(10);
-// multiplyValue(10, 5);
-// multiplyValue(7, 0);
 
-// *2
 
 const processInput = (
   value: string | number | boolean,
-): string | number | boolean | undefined => {
+): string | number | undefined => {
   if (typeof value === "string") {
     const formatedValue = value.trim().toLowerCase();
-    return `"${formatedValue}"`;
+    return formatedValue;
   } else if (typeof value === "number") {
     return value * 10;
   } else if (typeof value === "boolean") {
-    if (value === true) {
-      return `"Active"`;
-    }
-    if (value === false) {
-      return `"Inactive"`;
-    }
+    return value ? "Active" : "Inactive";
   }
 };
 
-// Sample Input:
-// processInput("  TypeScript  ");
-// processInput(7);
-// processInput(true);
-// processInput(false);
 
-// * 3
 
-const formatCoordinate = (dhakaLatLog: readonly [number, number, string]) => {
-  return `"Location: ${dhakaLatLog[2]} (${dhakaLatLog[0]}, ${dhakaLatLog[1]})"`;
+const formatCoordinate = (
+  dhakaLatLog: readonly [number, number, string],
+): string => {
+  const [latitude, longitude, locationName] = dhakaLatLog;
+  return `Location: ${locationName} (${latitude}, ${longitude})`;
 };
 
-// Sample Input:
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
 
-//* 4
 
-const concatenateArrays = <T>(...value: T[][]) => {
-  console.log(value.flat());
+const concatenateArrays = <T>(...value: T[][]): T[] => {
+  return value.flat();
 };
 
-// Sample Input:
-// console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
-//* 5
 
 interface Course {
   title: string;
@@ -69,39 +48,23 @@ const getPopularCourses = (
   const coursesArray: Course[] = [];
 
   for (const course of courses) {
-    if (course.students > minStudents && course.isPublished === true) {
+    if (course.students >= minStudents && course.isPublished === true) {
       coursesArray.push(course);
     }
   }
   return coursesArray;
 };
 
-// Sample Input:
-// const courses = [
-//   { title: "TypeScript Mastery", students: 120, isPublished: true },
-//   { title: "Draft Course", students: 200, isPublished: false },
-//   { title: "Basic HTML", students: 45, isPublished: true },
-//   { title: "Next.js Pro", students: 85, isPublished: true }
-// ];
 
-// console.log(getPopularCourses(courses, 80));
 
-//* 6
+
 
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((itm) => itm[key]);
 };
-// Sample Input:
-// const users = [
-//   { id: 1, name: "Rakib", role: "Admin" },
-//   { id: 2, name: "Sadia", role: "Editor" },
-//   { id: 3, name: "Tariq", role: "Subscriber" },
-// ];
 
-// console.log(pluckValues(users, "name"));
-// console.log(pluckValues(users, "id"));
 
-// *7
+
 
 class Employee {
   protected name: string;
@@ -128,24 +91,19 @@ class Manager extends Employee {
   }
 }
 
-// Sample Input:
-// const manager = new Manager("Alice", 50000, "Engineering");
-// console.log(manager.getDetails());
-// console.log(manager.getRoleInfo());
 
-// * 8
 
-const validateAgeAsync = async (age: number): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    if (age < 18) {
-      reject(new Error("Access Denied: Must be 18 or older"));
-    } else {
-      setTimeout(() => {
-        resolve("Access Granted");
-      }, 1000);
-    }
+
+
+const  validateAgeAsync=async(age: number): Promise<string> =>{
+  if (age < 18) {
+    throw new Error("Access Denied: Must be 18 or older")
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Access Granted");
+    }, 1000);
   });
-};
+}
 
-// console.log(await validateAgeAsync(20));
-// console.log(await validateAgeAsync(15));

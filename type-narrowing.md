@@ -2,12 +2,12 @@
 
 Type Narrowing is a very powerful feature of Typescript that use to narrow down or refine a variable's type within a specific block of code.
 
-When a variable has multiple possible type like a Union type , TypeScript uses conditional checks to find out exactly which type that variable holds in a given block
+When a variable has multiple possible type like a Union type , TypeScript uses conditional checks to find out exactly which type that variable holds
 
 For example, if a variable has union type string | number generally we can not run 
 .toUpperCase() method, because toUpperCase() not work with number. By using type narrowing, we apply condition to assure the compiler which type the variable is.
 
-
+-- Example:
 ```ts
 type ValueFormat = string | number
 
